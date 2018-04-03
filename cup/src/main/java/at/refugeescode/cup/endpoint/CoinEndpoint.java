@@ -6,22 +6,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/coin")
 public class CoinEndpoint {
 
-    Boolean coin = false;
+    private Boolean coin;
 
     @GetMapping
-    Boolean GetCoin() {
+    Boolean getCoin() {
         return coin;
     }
 
-    @PostMapping
-    Boolean putCoin() {
+    @PutMapping
+    void putCoin() {
         coin = true;
-        return coin;
     }
 
     @DeleteMapping
-    Boolean deleteCoin() {
+    void removeCoin() {
         coin = false;
-        return coin;
     }
 }
